@@ -9,5 +9,6 @@ public interface DAO {
 
     ResultSet getDataSet(String query);
     List<Entry> getAllEntries(String query);
+    void addEntry(Entry entry);
 
 }

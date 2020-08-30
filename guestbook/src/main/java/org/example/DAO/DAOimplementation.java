@@ -4,9 +4,9 @@ import org.example.Entry;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class DAOimplementation implements DAO{
 
@@ -49,6 +49,27 @@ public class DAOimplementation implements DAO{
             e.printStackTrace();
         }
         return allEntries;
+    }
+
+    public int getCurrentMaxId() {
+        String query = "SELECT MAX(id) AS maxId FROM entry;";
+        dbConnection.connection();
+        try {
+            Statement statement = dbConnection.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            int maxId = resultSet.getInt("maxId") + 1;
+           /* statement.close();
+            connection.close();*/
+            return maxId;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public void addEntry(Entry entry) {
+        dbConnection.executeQuery(String.format("INSERT INTO entry(entry, name, date) VALUES ('%d', '%s', '%s', '%s');", entry.getId(), entry.getEntry(), entry.getName(), entry.getDate()));
     }
 
 }

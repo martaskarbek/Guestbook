@@ -2,6 +2,8 @@ package org.example;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import org.example.DAO.DAOimplementation;
+import org.example.DAO.DBConnection;
 import org.jtwig.JtwigModel;
 import org.jtwig.JtwigTemplate;
 
@@ -16,7 +18,12 @@ public class Home implements HttpHandler {
     private List<Entry> entries = new ArrayList<Entry>();
 
     public Home() {
-
+        DBConnection connection = new DBConnection();
+        DAOimplementation daoImpl = new DAOimplementation(connection);
+        List<Entry> allEntries = daoImpl.getAllEntries("SELECT * FROM entry;");
+        for (Entry entry : allEntries) {
+            entries.add(entry);
+        }
     }
 
     @Override
@@ -33,4 +40,5 @@ public class Home implements HttpHandler {
         os.write(response.getBytes());
         os.close();
     }
+
 }
