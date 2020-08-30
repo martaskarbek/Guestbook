@@ -1,0 +1,5 @@
+{
+  "DBConnection": "jdbc:postgresql://localhost:5432/guestbook",
+  "DBUser": "Marta",
+  "DBPassword": "lalala"
+}
