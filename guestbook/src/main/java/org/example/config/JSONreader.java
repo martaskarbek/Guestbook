@@ -15,7 +15,7 @@ public class JSONreader {
         Map<String, String> connectionData = new HashMap<String, String>();
         JSONParser parser = new JSONParser();
         try {
-            Object obj = parser.parse(new FileReader("src/main/java/org/example/resource/dbData.JSON"));
+            Object obj = parser.parse(new FileReader("src/main/resources/dbData.JSON"));
             JSONObject jsonObject =  (JSONObject) obj;
             String connection = (String) jsonObject.get("DBConnection");
             connectionData.put("connection", connection);

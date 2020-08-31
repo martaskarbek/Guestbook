@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(247,179,215);
+    background: linear-gradient(0deg, rgba(247,179,215,1) 13%, rgba(140,208,235,1) 100%);
+    overflow-x: hidden;
+    display: flex;
+}
+
+.container {
+    width: 70vw;
+    height: 50vw;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

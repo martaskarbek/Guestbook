@@ -22,8 +22,8 @@ public class DAOimplementation implements DAO{
         try {
             dbConnection.statement = dbConnection.connection.createStatement();
             ResultSet results = dbConnection.statement.executeQuery(query);
-            /*statement.close();
-            connection.close();*/
+            /*dbConnection.statement.close();
+            dbConnection.connection.close();*/
             return results;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,11 +38,10 @@ public class DAOimplementation implements DAO{
             ResultSet dataSet = getDataSet(query);
             System.out.println("Got record succesfully.\n");
             while (dataSet.next()) {
-                final int id = dataSet.getInt("id");
                 final String oneEntry = dataSet.getString("entry");
                 final String name = dataSet.getString("name");
                 final String date = dataSet.getString("date");
-                Entry entry = new Entry(id, oneEntry, name, date);
+                Entry entry = new Entry(oneEntry, name, date);
                 allEntries.add(entry);
             }
         } catch (Exception e) {
@@ -51,25 +50,10 @@ public class DAOimplementation implements DAO{
         return allEntries;
     }
 
-    public int getCurrentMaxId() {
-        String query = "SELECT MAX(id) AS maxId FROM entry;";
-        dbConnection.connection();
-        try {
-            Statement statement = dbConnection.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
-            int maxId = resultSet.getInt("maxId") + 1;
-           /* statement.close();
-            connection.close();*/
-            return maxId;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return 0;
-    }
-
     @Override
     public void addEntry(Entry entry) {
-        dbConnection.executeQuery(String.format("INSERT INTO entry(entry, name, date) VALUES ('%d', '%s', '%s', '%s');", entry.getId(), entry.getEntry(), entry.getName(), entry.getDate()));
+        dbConnection.executeQuery(String.format("INSERT INTO entry(entry, name, date) VALUES ('%s', '%s', '%s');", entry.getEntry(), entry.getName(), entry.getDate()));
+        System.out.println("Adder record successfully.");
     }
 
 }

@@ -2,12 +2,14 @@ package org.example;
 
 import com.sun.net.httpserver.HttpServer;
 import java.net.InetSocketAddress;
+import java.sql.SQLException;
 
 public class App 
 {
-    public static void main( String[] args ) throws Exception
+    public static void main( String[] args ) throws Exception, SQLException
     {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8006), 0);
+
+        HttpServer server = HttpServer.create(new InetSocketAddress(8039), 0);
 
         server.createContext("/home", new Home());
         server.setExecutor(null); // creates a default executor
