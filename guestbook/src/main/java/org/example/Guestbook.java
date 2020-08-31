@@ -64,7 +64,7 @@ public class Guestbook implements HttpHandler {
                             "<html><body>" +
                             "<form method=\"POST\">\n" +
                             "  Note:<br>\n" +
-                            "  <input type=\"text\" name=\"note\" value=\"\">\n" +
+                            "  <textarea rows=\"4\" cols=\"50\" type=\"text\" name=\"note\" value=\"\"></textarea>\n" +
                             "  <br>\n" +
                             "  Name:<br>\n" +
                             "  <input type=\"text\" name=\"name\" value=\"\">\n" +
