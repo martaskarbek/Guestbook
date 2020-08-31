@@ -49,18 +49,7 @@ public class Guestbook implements HttpHandler {
             daoImpl.addEntry(entry);
             entries.add(entry);
             response =
-                    template.render(model); /*+*/
-                            /*"<html><body>" +
-                            "<form method=\"POST\">\n" +
-                            "  Note:<br>\n" +
-                            "  <textarea rows=\"4\" cols=\"50\" type=\"text\" name=\"note\" value=\"\"></textarea>\n" +
-                            "  <br>\n" +
-                            "  Name:<br>\n" +
-                            "  <input type=\"text\" name=\"name\" value=\"\">\n" +
-                            "  <br><br>\n" +
-                            "  <input type=\"submit\" value=\"Add note\">\n" +
-                            "</form> " +
-                            "</body></html>";*/
+                    template.render(model);
         }
 
         exchange.sendResponseHeaders(200, response.length());
