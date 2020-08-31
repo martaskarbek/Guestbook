@@ -1,20 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Guestbook</title>
-        <link rel="stylesheet" href="../src/main/resources/static/css/style.css">
-</head>
-<body>
-<div class="main">
-                <div class="container">
-                        {% for entry in entries %}
-                                <li>{{ entry.getEntry()  }} {{ entry.getName() }} {{ entry.getDate() }}</li>
-                        {% endfor %}
-                </div>
+<body style = "margin: 0; padding: 0;">
+<div class="main" style="display: flex; align-items: center; width: 100vw; height: 80vh; justify-content: space-evenly;
+background: rgb(247,179,215); background: linear-gradient(0deg, rgba(247,179,215,1) 13%, rgba(140,208,235,1) 100%); flex-direction: column;
+overflow-y: scroll">
+    <p style="margin-top: 7vh; font-size: 1.8em; font-family: 'DejaVu Sans Condensed';">GUEST BOOK</p>
+    <div class="container">
+            {% for entry in entries %}
+                    <div style="border: dotted gray; margin: 1vh; background-color: rgba(255,255,255, 0.25);">
+                        <p style="margin:0.7vh; font-family: 'DejaVu Sans Condensed'; font-size: 1.25em;">{{ entry.getEntry()  }}</p>
+                        <p style="margin:0.7vh; font-family: 'DejaVu Sans Condensed'; font-size: 1.25em;">Name: {{ entry.getName() }}</p>
+                        <p style="margin:0.7vh; font-family: 'DejaVu Sans Condensed'; font-size: 1.25em;">Date: {{ entry.getDate() }}</p>
+                    </div>
+            {% endfor %}
+    </div>
 </div>
 </body>
 </html>
