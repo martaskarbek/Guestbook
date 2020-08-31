@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args ) throws Exception, SQLException
     {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8055), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(8056), 0);
 
         server.createContext("/guestbook", new Guestbook());
         server.setExecutor(null);
