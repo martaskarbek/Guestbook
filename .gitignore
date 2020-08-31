@@ -1,6 +1,8 @@
+.idea
+dbData.JSON
 # Compiled class file
 *.class
-
+*.iml
 # Log file
 *.log
 

@@ -1,13 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Guestbook</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
+{% extends 'body.twig' %}
+
+{%  block body %}
 <div class="main">
     <p>GUEST BOOK</p>
     <div class="container">
@@ -28,7 +21,8 @@
         <br><br>
         <input type="submit" value="Add note">
     </form>
-    <button onclick="">aaaaaaa</button>
+    <nav>
+        <a href="/student">STUDENT LIST</a>
+    </nav>
 </div>
-</body>
-</html>
+{% endblock %}

@@ -1,9 +1,10 @@
-package org.example;
+package org.example.controllers;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import org.example.DAO.DAOimplementation;
 import org.example.DAO.DBConnection;
+import org.example.Entry;
 import org.jtwig.JtwigModel;
 import org.jtwig.JtwigTemplate;
 

@@ -1,0 +1,9 @@
+{% extends '../body.twig' %}
+
+{%  block body %}
+<div class="main">
+    {% for user in users %}
+        <p>{{ user.getName() }} {{ user.getSurname() }}</p><a href="/student/{{ user.getId() }}">DETAILS</a>
+    {% endfor %}
+</div>
+{% endblock %}
