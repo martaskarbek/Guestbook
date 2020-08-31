@@ -5,14 +5,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guestbook</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="main">
-        <div class="container">
-            {% for entry in entries %}
-                <li>{{ entry.getEntry()  }} {{ entry.getName() }} {{ entry.getDate() }}</li>
-            {% endfor %}
-        </div>
+<div class="main">
+    <p>GUEST BOOK</p>
+    <div class="container">
+        {% for entry in entries %}
+            <div>
+                <p>{{ entry.getEntry()  }}</p>
+                <p>Name: {{ entry.getName() }}</p>
+                <p>Date: {{ entry.getDate() }}</p>
+            </div>
+        {% endfor %}
     </div>
+    <form method="POST">
+        <p style="font-family: 'DejaVu Sans Condensed'; font-size: 1.25em">Note:</p><br>
+        <textarea rows="4" cols="50" type="text" name="note" value=""></textarea>
+        <br>
+        <p>Name:</p><br>
+        <input type="text" name="name" value="">
+        <br><br>
+        <input type="submit" value="Add note">
+    </form>
+    <button onclick="">aaaaaaa</button>
+</div>
 </body>
 </html>
