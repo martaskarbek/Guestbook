@@ -11,6 +11,7 @@ public class App
         HttpServer server = HttpServer.create(new InetSocketAddress(8049), 0);
 
         server.createContext("/guestbook", new Guestbook());
+        server.createContext("/static", new Static());
         server.setExecutor(null);
 
         server.start();
