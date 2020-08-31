@@ -50,7 +50,7 @@ public class DAOimplementation implements DAO{
     @Override
     public void addEntry(Entry entry) {
         dbConnection.executeQuery(String.format("INSERT INTO entry(entry, name, date) VALUES ('%s', '%s', '%s');", entry.getEntry(), entry.getName(), entry.getDate()));
-        System.out.println("Adder record successfully.");
+        System.out.println("Added record successfully.");
     }
 
 }

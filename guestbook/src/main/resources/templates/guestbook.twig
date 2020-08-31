@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,12 +7,12 @@
     <title>Guestbook</title>
 </head>
 <body>
-<div class="main">
-    <div class="container">
-        {% for entry in entries %}
-            <li>{{ entry.getEntry()  }} {{ entry.getName() }} {{ entry.getDate() }}</li>
-        {% endfor %}
+    <div class="main">
+        <div class="container">
+            {% for entry in entries %}
+                <li>{{ entry.getEntry()  }} {{ entry.getName() }} {{ entry.getDate() }}</li>
+            {% endfor %}
+        </div>
     </div>
-</div>
 </body>
 </html>

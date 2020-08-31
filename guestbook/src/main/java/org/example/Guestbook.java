@@ -35,18 +35,7 @@ public class Guestbook implements HttpHandler {
 
         if(method.equals("GET")){
             response =
-                    template.render(model) +
-                            "<html><body>" +
-                            "<form method=\"POST\">\n" +
-                            "  Note:<br>\n" +
-                            "  <input type=\"text\" name=\"note\" value=\"\">\n" +
-                            "  <br>\n" +
-                            "  Name:<br>\n" +
-                            "  <input type=\"text\" name=\"name\" value=\"\">\n" +
-                            "  <br><br>\n" +
-                            "  <input type=\"submit\" value=\"Add note\">\n" +
-                            "</form> " +
-                            "</body></html>";
+                    template.render(model);
         }
         if(method.equals("POST")){
             InputStreamReader isr = new InputStreamReader(exchange.getRequestBody(), "utf-8");
@@ -60,18 +49,7 @@ public class Guestbook implements HttpHandler {
             daoImpl.addEntry(entry);
             entries.add(entry);
             response =
-                    template.render(model) +
-                            "<html><body>" +
-                            "<form method=\"POST\">\n" +
-                            "  Note:<br>\n" +
-                            "  <input type=\"text\" name=\"note\" value=\"\">\n" +
-                            "  <br>\n" +
-                            "  Name:<br>\n" +
-                            "  <input type=\"text\" name=\"name\" value=\"\">\n" +
-                            "  <br><br>\n" +
-                            "  <input type=\"submit\" value=\"Add note\">\n" +
-                            "</form> " +
-                            "</body></html>";
+                    template.render(model);
         }
 
         exchange.sendResponseHeaders(200, response.length());
