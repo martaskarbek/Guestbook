@@ -4,7 +4,6 @@ import org.example.Entry;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +21,6 @@ public class DAOimplementation implements DAO{
         try {
             dbConnection.statement = dbConnection.connection.createStatement();
             ResultSet results = dbConnection.statement.executeQuery(query);
-            /*dbConnection.statement.close();
-            dbConnection.connection.close();*/
             return results;
         } catch (SQLException e) {
             e.printStackTrace();

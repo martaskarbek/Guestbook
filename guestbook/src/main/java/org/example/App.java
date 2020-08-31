@@ -8,11 +8,10 @@ public class App
 {
     public static void main( String[] args ) throws Exception, SQLException
     {
+        HttpServer server = HttpServer.create(new InetSocketAddress(8049), 0);
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(8039), 0);
-
-        server.createContext("/home", new Home());
-        server.setExecutor(null); // creates a default executor
+        server.createContext("/guestbook", new Guestbook());
+        server.setExecutor(null);
 
         server.start();
         System.out.println("Server has started on port " + server.getAddress().getPort());
