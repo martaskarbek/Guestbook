@@ -11,17 +11,21 @@
 <body>
 <div class="main">
     <p>GUEST BOOK</p>
+    <section>
     <div class="container">
         {% for entry in entries %}
-            <div>
-                <p>{{ entry.getEntry()  }}</p>
-                <p>Name: {{ entry.getName() }}</p>
-                <p>Date: {{ entry.getDate() }}</p>
+            <div class="wrapper">
+                <p class="inner">Entry: </p>
+                <p class="inner">{{ entry.getEntry()  }}</p>
+                <p class="inner">Name:</p>
+                <p class="inner">{{ entry.getName() }}</p>
+                <p class="inner">Date:</p>
+                <p class="inner">{{ entry.getDate() }}</p>
             </div>
         {% endfor %}
     </div>
     <form method="POST">
-        <p style="font-family: 'DejaVu Sans Condensed'; font-size: 1.25em">Note:</p><br>
+        <p>Note:</p><br>
         <textarea rows="4" cols="50" type="text" name="note" value=""></textarea>
         <br>
         <p>Name:</p><br>
@@ -29,6 +33,7 @@
         <br><br>
         <input type="submit" value="Add note">
     </form>
+    </section>
 </div>
 </body>
 </html>
