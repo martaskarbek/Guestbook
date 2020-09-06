@@ -3,20 +3,40 @@
     padding: 0;
 }
 
-.main {
-    width: 100vw;
-    height: 100vh;
-    background: rgb(247,179,215);
-    background: linear-gradient(0deg, rgba(247,179,215,1) 13%, rgba(140,208,235,1) 100%);
-    overflow-x: hidden;
-    display: flex;
-}
-
-.container {
-    width: 70vw;
-    height: 50vw;
-    overflow-y: scroll;
+.main, .container, form {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
+}
+
+p {
+    font-size: 3em;
+}
+
+.main {
+    font-family: 'Inconsolata', monospace;
+    color: whitesmoke;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("background.jpg");
+    background-color: #cccccc;
+    overflow-x: hidden;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.container {
+    font-size: 0.6em;
+    width: 70vw;
+    height: 50vh;
+    overflow-y: scroll;
+    background-color: rgba(230, 230, 230, 0.3);
+}
+
+form {
+    width: 70vw;
+    height: 20vh;
+    background-color: rgba(230, 230, 230, 0.3);
 }
